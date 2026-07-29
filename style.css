@@ -319,6 +319,7 @@ body {
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 24px;
+  text-align: justify; /* Textos justificados aqui */
 }
 
 .about-stats {
@@ -328,12 +329,18 @@ body {
   margin-top: 64px;
 }
 
+/* CARDS SOBRE MIM - CENTRALIZADOS */
 .stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 32px;
   background: var(--bg-secondary);
   border-radius: 16px;
   transition: all 0.3s ease;
+  height: 100%;
 }
 
 .stat:hover {
@@ -411,7 +418,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
-  /* Centraliza se houver poucos cards */
   justify-content: center;
 }
 
@@ -449,11 +455,13 @@ body {
   transform: scale(1.05);
 }
 
+/* CARDS DE PROJETO - ESTRUTURA MISTA */
 .project-content {
   padding: 32px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  align-items: center; 
 }
 
 .project-content h3 {
@@ -461,6 +469,7 @@ body {
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 12px;
+  text-align: center; /* Mantém o título centralizado */
 }
 
 .project-content p {
@@ -468,11 +477,13 @@ body {
   line-height: 1.6;
   margin-bottom: 24px;
   flex-grow: 1;
+  text-align: left; /* <-- ALTERADO: Agora alinhado à esquerda para não dar os espaços brancos */
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Centraliza as caixinhas de tags */
   gap: 8px;
   margin-bottom: 24px;
 }
@@ -496,11 +507,12 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   margin-top: auto;
+  align-self: center; /* Mantém o botão centralizado */
 }
 
 .project-link:hover {
   color: var(--secondary-color);
-  transform: translateX(4px);
+  transform: translateY(-4px); 
 }
 
 /* Contact Section */
@@ -578,10 +590,9 @@ body {
   font-size: 1rem;
 }
 
-/* Classe para corrigir o Email Longo */
 .email-text {
-  word-break: break-word; /* Quebra palavras longas se necessário */
-  font-size: 0.9rem !important; /* Fonte levemente menor */
+  word-break: break-word; 
+  font-size: 0.9rem !important; 
   line-height: 1.4;
   text-align: center;
 }
@@ -661,8 +672,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
   .nav-menu {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
 
   .about-stats {
